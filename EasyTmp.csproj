@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>14</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PackageId>z5tm.EasyTmp</PackageId>
+        <Authors>z5tm</Authors>
+        <Description>A tool for creating color-coded argument lists for game plugins, using TextMeshPro-esque syntax.</Description>
+        <RepositoryUrl>https://github.com/z5tm/EasyTmp</RepositoryUrl>
+        <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
+    </PropertyGroup>
+</Project>
