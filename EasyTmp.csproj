@@ -5,12 +5,12 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
     <PropertyGroup>
-        <PackageId>z5tm.EasyTmp</PackageId>
+        <PackageId>EasyTmp</PackageId>
         <Authors>z5tm</Authors>
         <Description>A tool for creating color-coded argument lists for game plugins, using TextMeshPro-esque syntax.</Description>
         <RepositoryUrl>https://github.com/z5tm/EasyTmp</RepositoryUrl>
         <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
-        <Version>1.0.0</Version>
+        <Version>1.0.1.5</Version>
         <IsPackable>true</IsPackable>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>

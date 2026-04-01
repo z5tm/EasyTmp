@@ -9,6 +9,13 @@ public class EasyArgs
     
     
     public static EasyArgs Build() => new EasyArgs(){_ttb = new List<string>()};
+    public EasyArgs Green(string text)
+    {
+        var greentrimmedtext = text.Trim();
+        var greentext = $"<color=green>{greentrimmedtext}</color>";
+        _ttb.Add(greentext);
+        return this;
+    }
     public EasyArgs Blue(string text)
     {
         var bluetrimmedtext = text.Trim();
@@ -27,7 +34,7 @@ public class EasyArgs
     public EasyArgs Red(string text)
     {
         var redtrimmedtext = text.Trim();
-        var redtext = $"<color=orange>{redtrimmedtext}</color>";
+        var redtext = $"<color=red>{redtrimmedtext}</color>";
         _ttb.Add(redtext);
         return this;
     }
@@ -35,7 +42,7 @@ public class EasyArgs
     public EasyArgs Yellow(string text)
     {
         var yellowtrimmedtext = text.Trim();
-        var yellowtext = $"<color=orange>{yellowtrimmedtext}</color>";
+        var yellowtext = $"<color=yellow>{yellowtrimmedtext}</color>";
         _ttb.Add(yellowtext);
         return this;
     }
@@ -77,6 +84,7 @@ public class EasyArgs
     public EasyArgs CmdArguments(string text)
     {
         var split = text.Split([' '], StringSplitOptions.RemoveEmptyEntries);
+        var argumentsStart = "<color=orange>Arguments:</color>\n";
 
         for (int i = 0; i < split.Length; i++)
         {
@@ -84,21 +92,19 @@ public class EasyArgs
             bool isLast = (i == split.Length - 1);
             bool isFirst = (i == 0);
 
-            var argumentsStart = "<color=orange>Arguments:</color>\n";
-            var begin = $"<color=blue>{part}</color>";
+            var begin = $"<color=blue>{part}</color> ";
             var formatted = $"<color=orange>[</color><color=blue>{part}</color><color=orange>]</color>";
             
             if (isFirst)
             {
                 _ttb.Add(argumentsStart + begin);
-                return this;
+                continue;
             }
             if (isLast)
             {
                 _ttb.Add(formatted);
-                return this;
+                continue;
             }
-
             _ttb.Add(formatted + " ");
         }
     
@@ -112,6 +118,17 @@ public class EasyArgs
     public EasyArgs NewLine()
     {
         _ttb.Add("\n");
+        return this;
+    }
+    public EasyArgs Size(int size)
+    {
+        _ttb.Add($"<size={size}>");
+        return this;
+    }
+
+    public EasyArgs EndSize()
+    {
+        _ttb.Add("</size>");
         return this;
     }
 
